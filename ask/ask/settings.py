@@ -81,7 +81,6 @@ DATABASES = {
         'NAME': 'web',
         'USER': 'anemona',
         'PASSWORD': 'password',
-        'OPTIONS': {'charset': 'utf8mb4'}
     },
 }
 
