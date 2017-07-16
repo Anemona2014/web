@@ -9,8 +9,9 @@ from django.contrib.auth.models import User
 
 class QuestionManager(models.Manager):
 
-    def new(self):
-        return self.last()
+    def new(self, quantity=None):
+        last_qa = self.all().order_by('added_at')[:quantity]
+        return last_qa
 
     def popular(self):
         return self.objects.all().order_by('rating')
