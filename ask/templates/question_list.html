@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1>Question List</h1>
+    {% if object_list %}
+    <ul>
+
+      {% for q in object_list %}
+      <li>
+        {{ q.title }}
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}
+</head>
+<body>
+
+</body>
+</html>

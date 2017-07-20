@@ -9,8 +9,8 @@ from django.contrib.auth.models import User
 
 class QuestionManager(models.Manager):
 
-    def new(self, quantity=None):
-        last_qa = self.all().order_by('added_at')[:quantity]
+    def new(self):
+        last_qa = self.all().order_by('-added_at')
         return last_qa
 
     def popular(self):
@@ -36,4 +36,4 @@ class Answer(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return self.question.title
